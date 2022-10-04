@@ -12,7 +12,7 @@
     </div>
     <div class="p-[10px] flex flex-col space-y-[10px] justify-center items-start">
         <p>Giá sản phẩm</p>
-        <input class="border border-gray-500 p-[10px] w-[500px] rounded-lg" type="text" name="productPrice" placeholder="Nhập giá sản phẩm" value="<?php echo $item['productName']?>">
+        <input class="border border-gray-500 p-[10px] w-[500px] rounded-lg" type="text" name="productPrice" placeholder="Nhập giá sản phẩm" value="<?php echo $item['productPrice']?>">
     </div>
     <div class="p-[10px] flex flex-col space-y-[10px] justify-center items-start">
         <p>Ảnh sản phẩm</p>

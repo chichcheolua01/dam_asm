@@ -4,32 +4,6 @@
     $products = getAll($product_query);
     $category_query = "SELECT * FROM categories";
     $categories = getAll($category_query);
-include "./model/connect.php";
-$query = "select * from users";
-$users = getAll($query);
-session_start(); //bắt đầu session
-$login_alert = "";
-foreach ($users as $value) {
-    if (isset($_POST['submit'])) {
-        $userName = $_POST['userName'];
-        $userPassword = $_POST['userPassword'];
-        if ($userName == $value['userName'] && $userPassword == $value['userPassword']) {
-            $_SESSION['userName'] = $userName;
-            header('Location: index.php');
-        } else {
-            $login_alert = "Incorrect username or password";
-        }
-    }
-}
-if (isset($_SESSION["userName"])) {
-    $username = $_SESSION['userName'];
-    $query2 = "SELECT * FROM users WHERE userName like '$username'";
-    $login_user = getOne($query2);
-    $location = "admin.php";
-} else {
-    $login_user["userAvatar"] = "sample.png";
-    $location = "index.php";
-}
 
     include './header.php';
     //controllers
