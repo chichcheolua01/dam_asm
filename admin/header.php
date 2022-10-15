@@ -39,10 +39,10 @@
                     <a href="index.php?act=home">
                         <li class="text-sm hover:-translate-y-1 duration-500">Home</li>
                     </a>
-                    <a href="index.php?act=add-product">
+                    <a href="index.php?act=product">
                         <li class="text-sm hover:-translate-y-1 duration-500">Store</li>
                     </a>
-                    <a href="index.php?act=add-category">
+                    <a href="index.php?act=category">
                         <li class="text-sm hover:-translate-y-1 duration-500">Categories</li>
                     </a>
                     <a href="index.php?act=list-customer">

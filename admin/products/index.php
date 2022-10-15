@@ -1,5 +1,6 @@
 
 <div class="">
+    <a href="./index.php?act=add-product"><button class="p-[10px] border border-1-gray-500 rounded-xl bg-gray-500 text-white"> Thêm sản phẩm</button></a>
     <table>
         <thead>
             <tr>

@@ -8,7 +8,6 @@
                     <h3 class="text-2xl font-extrabold">YOUR ACCOUNT FOR </h3>
                     <h3 class="text-2xl font-extrabold">EVERYTHING NIKE</h3>
                 </div>
-                <p class="text-sm text-rose-900" id="login_alert"> <?php echo $login_alert; ?></p>
                 <form action="" method="POST">
                     <div class="flex flex-col space-y-10">
                         <div class="flex flex-col space-y-2">
@@ -18,7 +17,7 @@
                         <button class="p-2 bg-black w-[300px]" type="submit" name="submit">
                             <p class="text-nm text-white font-extrabold">SIGN IN</p>
                         </button>
-                        <p class="text-sm text-gray-500">Not a member? <a href="signup.php" class="text-black underline">Join us</a> </p>
+                        <p class="text-sm text-gray-500">Not a member? <a href="./index.php?act=signup" class="text-black underline">Join us</a> </p>
                     </div>
 
                 </form>

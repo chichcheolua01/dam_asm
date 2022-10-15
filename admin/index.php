@@ -43,6 +43,9 @@
         case 'login':
             include './login.php';
             break;
+        case 'signup':
+            include './signup.php';
+            break;
         default:
             include './home.php';
             break;
