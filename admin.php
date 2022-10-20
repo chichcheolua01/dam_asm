@@ -1,4 +1,12 @@
-
+<?php
+    include './model/connect.php';
+    $product_query = "SELECT * FROM products";
+    $products = getAll($product_query);
+    $category_query = "SELECT * FROM categories";
+    $categories = getAll($category_query);
+    $user_query = "SELECT * FROM users";
+    $users = getAll($user_query);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,6 +76,25 @@
         </div>
 
     </div>
+    <div class="flex justify-center">
+        <img src="./image/banner.jpg" class="h-[600px] w-auto"  alt="">
+    </div>
+    <div class="mt-[166px] flex justify-center text-center">
+        <div class="w-full">
+            <h1 class="text-3xl font-bold mb-10">New Arrivals</h1>
+            <div class="grid grid-cols-4">
+                <?php foreach($products as $key => $item):?>
+                    <div class="flex flex-col">
+                        <img src="./image/<?php echo $item['productImage']?>" alt="">
+                        <p class="text-2xl" ><?php echo $item['productName']?></p>
+                        <p class="text-lg text-gray-500" ><?php echo $item['productPrice']?></p>
+                    </div>
+                <?php endforeach?>
+            </div>
+        </div>
+    </div>
+
+</div>
     <footer class="bg-slate-900 text-white w-full py-20 mt-32">
         <div class="grid grid-cols-2 container mx-auto">
             <div class="flex justify-between">

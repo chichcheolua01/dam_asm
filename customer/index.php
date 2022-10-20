@@ -4,7 +4,8 @@
     $products = getAll($product_query);
     $category_query = "SELECT * FROM categories";
     $categories = getAll($category_query);
-
+    $user_query = "SELECT * FROM users";
+    $users = getAll($user_query);
     include './header.php';
     //controllers
 
