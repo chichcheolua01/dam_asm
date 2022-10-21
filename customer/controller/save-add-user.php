@@ -26,8 +26,7 @@
         $query = "INSERT INTO users (userName, userPassword, userImage, userFullname, userAccess) VALUES ('$userName','$userPassword','$userImage', '$userFullname','$userAccess')";
         connect($query); 
         move_uploaded_file($_FILES["userImage"]["tmp_name"],"../../image/".$_FILES["userImage"]["name"]);
-        var_dump($users);
-        header("Location:../index.php?act=login");
+        header("Location:./add-receipt.php");
     }
     
 ?>

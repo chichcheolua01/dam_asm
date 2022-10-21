@@ -1,5 +1,8 @@
 
 <div class="">
+    <a href="./index.php?act=add-category">   
+    <button>Add category</button>
+    </a>
     <table>
         <thead>
             <tr>

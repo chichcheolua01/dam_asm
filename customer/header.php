@@ -66,9 +66,14 @@
                     <a href="index.php?act=home">
                         <li class="text-sm hover:-translate-y-1 duration-500">Home</li>
                     </a>
-                    <a href="index.php?act=cart">
-                        <li class="text-sm hover:-translate-y-1 duration-500">Cart</li>
-                    </a>
+                    <?php
+                    if(isset($_SESSION['userName']))
+                    {
+                        echo "<a href='index.php?act=cart'>
+                        <li class='text-sm hover:-translate-y-1 duration-500'>Cart</li>
+                        </a>";
+                    }
+                    ?>
                 </ul>
                 <div class="flex flex-col items-center justify-center space-y-8">
                     <?php 

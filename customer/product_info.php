@@ -48,6 +48,7 @@
         </div>
     </div>
 </div>
+<div> <h2 class="text-3xl">Sản phẩm tương tự</h2> </div>
 <div class="grid grid-cols-4" >
     <?php foreach ($all_item_in_category as $key => $item): ?>
     <a href="./index.php?act=product_info&id=<?php echo $item['productId'] ?>">
