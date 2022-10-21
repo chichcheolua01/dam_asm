@@ -1,5 +1,5 @@
 <div class="">
-    <a href="./index.php?act=save-add-user"><button class="p-[10px] border border-1-gray-500 rounded-xl bg-gray-500 text-white">Thêm sản phẩm</button></a>
+    <a href="./index.php?act=signup"><button class="p-[10px] border border-1-gray-500 rounded-xl bg-gray-500 text-white">Thêm tài khoản</button></a>
     <table>
         <thead>
             <tr>

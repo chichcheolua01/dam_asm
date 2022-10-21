@@ -6,7 +6,6 @@
     $image = $_FILES["productImage"]["name"];
     $desc = $_POST["productDesc"];
     $category = $_POST["categoryId"];
-    //print_r($_FILES["productImage"]);die;
     if($_FILES["productImage"]["name"] != "")
     {
         $query = "UPDATE products SET productName = '$name', productPrice = '$price', productImage = '$image', productDesc = '$desc', categoryId = '$category' WHERE productId ='$id'";

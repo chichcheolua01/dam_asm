@@ -20,7 +20,7 @@
                 <td><?php echo $value["productName"]; ?></td>
                 <td><?php echo $value["productPrice"]?></td>
                 <td class="flex justify-center items-center" ><img class="w-10 h-10" src="./image/<?php echo $value["productImage"]?>" alt=""> </td>
-                <td><?php echo $value["productDesc"]?></td>
+                <td><?php echo substr($value["productDesc"], 0, 100) ?>...</td>
                 <td><?php echo $value["productView"]?></td>
                 <td><div class="flex justify-center items-center space-x-[10px]" > 
                     <a href="./index.php?act=edit-product&id=<?php echo $value['productId'] ?>"><div>Sửa</div> </a>

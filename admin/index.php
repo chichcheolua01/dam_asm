@@ -1,13 +1,23 @@
 <?php
     include '../model/connect.php';
     session_start();
-    
-    if(isset($_SESSION['userName'])){
-        if($_SESSION['userName'] == 0)
+    if(!isset($_SESSION['username'])){
+        if($_SESSION['userName'] == "")
         {
-            echo $_SESSION['userName'];die;
-            header('Location:../customer/index.php?act=home');
+            header("Location: ../customer/index.php?act=login");
         }
+        else 
+        {
+            // echo("Tên tài khoản".$_SESSION['userName']);
+            if($_SESSION['userAccess'] == 0)
+            {
+                header("Location: ../customer/index.php?act=home");
+            }
+        }
+    }
+    else
+    {
+        header("Location: index.php?act=home");
     }
     $product_query = "SELECT * FROM products";
     $products = getAll($product_query);

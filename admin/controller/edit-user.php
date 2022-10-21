@@ -15,6 +15,6 @@
         $query = "UPDATE users SET userName = '$name', userPassword = '$password', userFullname = '$fullname', userAccess = '$access' WHERE userId ='$id'";
     }  
     connect($query);
-    move_uploaded_file($_FILES["userImage"]["tmp_name"], "../image/".$_FILES["userImage"]["name"]);
+    move_uploaded_file($_FILES["userImage"]["tmp_name"], "../../image/".$_FILES["userImage"]["name"]);
     header("Location: ../index.php?act=list-user");
 ?>

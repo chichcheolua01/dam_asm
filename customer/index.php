@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include '../model/connect.php';
     $product_query = "SELECT * FROM products";
     $products = getAll($product_query);
@@ -7,6 +8,7 @@
     $user_query = "SELECT * FROM users";
     $users = getAll($user_query);
     include './header.php';
+
     //controllers
 
     if(isset($_GET['act']))
@@ -16,6 +18,9 @@
         {
         case 'product':
             include "./products/index.php";
+            break;
+        case 'product_info':
+            include "./product_info.php";
             break;
         case 'add-product':
             include "./products/add-product.php";
@@ -43,6 +48,12 @@
             break;
         case 'login':
             include './login.php';
+            break;
+        case 'signup':
+            include './signup.php';
+            break;
+        case 'cart':
+            include './cart/cart.php';
             break;
         default:
             include './home.php';

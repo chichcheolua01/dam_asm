@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,6 +25,34 @@
             }
         }
     </script>
+            <!-- <style>
+                 body {
+                padding: 2%;
+                text-align: center;
+                }
+                #slideshow {
+                overflow: hidden;
+                height: 510px;
+                width: 728px;
+                margin: 0 auto;
+                }
+                .slide-wrapper {
+                width: 2912px;
+                -webkit-animation: slide 14s ease infinite;
+                }
+                .slide {
+                float: left;
+                height: 510px;
+                width: 728px;
+                }
+                @-webkit-keyframes slide {
+                20% {margin-left: 0px;}
+                30% {margin-left: -728px;}
+                50% {margin-left: -728px;}
+                60% {margin-left: -1456px;}
+                80% {margin-left: -1456px;}
+                }
+            </style> --> 
 </head>
 
 <body class="lg:px-[100px] ">
@@ -39,26 +66,35 @@
                     <a href="index.php?act=home">
                         <li class="text-sm hover:-translate-y-1 duration-500">Home</li>
                     </a>
-                    <a href="index.php?act=product">
-                        <li class="text-sm hover:-translate-y-1 duration-500">Store</li>
+                    <a href="index.php?act=cart">
+                        <li class="text-sm hover:-translate-y-1 duration-500">Cart</li>
                     </a>
                 </ul>
-                <div class="flex justify-between items-center space-x-8">
-                    <a href="index.php?act=login"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                        </svg></a>
-                    <a href=""><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                        </svg></a>
-                    <a class="" href=""><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
-                        </svg></a>
-                    <a href="./controller/logout.php"> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-                        </svg> </a>
+                <div class="flex flex-col items-center justify-center space-y-8">
+                    <?php 
+                        if(!isset($_SESSION["userName"]))
+                        
+                        {
+                            ?>
+                            <a href="index.php?act=login"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                            </svg></a>
+                            <?php
+                        }
+                        else {
+                            $userName = $_SESSION["userName"];
+                            $query = "SELECT * FROM users WHERE userName = '$userName'";
+                            $login_user = getOne($query);
+                            echo "";
+                    ?>
+                    <a href="controller/logout.php"><img class="w-[50px] h-auto rounded-full" src="../image/<?php echo $login_user['userImage'] ?>" alt=""></a>
+                    <?php
+                        }
+                    ?> 
                 </div>
                 <div>
                     <img src="./image/" alt="">
                 </div>
             </div>
+            
         </header>
